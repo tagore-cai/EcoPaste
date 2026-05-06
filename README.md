@@ -69,7 +69,7 @@
 
 ## 🌟 分支说明
 
-> 本仓库是 [EcoPasteHub/EcoPaste](https://github.com/EcoPasteHub/EcoPaste) 的 Fork 版本，在官方原版基础上，重构并新增了跨设备数据同步、WebDAV 云端数据资产安全备份、全景存储统计等多项高级功能，同时全面增强了剪贴板内容的智能分类识别引擎与日常交互的沉浸式体验。
+> 本仓库是 [EcoPasteHub/EcoPaste-Pro](https://github.com/3899/EcoPaste-Pro) 的 Fork 版本，原版未提供mac平台打包，故在原版基础上增加些许修改和优化，打包mac平台自己使用
 
 ## 📥 下载链接
 
@@ -79,7 +79,7 @@
 - 📚 使用文档：[EcoPaste 官网](https://ecopaste.cn/)
 
 ### 🔗 本 Fork 分支
-- 📥 最新版本: [前往 Releases 下载最新构建程序包](https://github.com/3899/EcoPaste-Pro/releases/latest)
+- 📥 最新版本: [前往 Releases 下载最新构建程序包](https://github.com/tagore-cai/EcoPaste/releases/)
 - 📚 移动端数据同步指南
   - [Android 同步配置指南](docs/Android/README.md)（以 Tasker 为例提供完整配套文件，使用 MacroDroid 等自动化软件的用户完全可参考其逻辑举一反三自行编写）
   - iPhone 同步配置指南（整理中，待补充...）
