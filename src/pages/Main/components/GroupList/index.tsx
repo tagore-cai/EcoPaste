@@ -69,49 +69,23 @@ const GroupList = () => {
     },
   ];
 
-  useKeyPress(
-    "tab",
-    (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const index = presetGroups.findIndex(
-        (item) => item.id === rootState.group,
-      );
-      const length = presetGroups.length;
-
-      let nextIndex = index;
-
-      if (event.shiftKey) {
-        nextIndex = index === 0 ? length - 1 : index - 1;
-      } else {
-        nextIndex = index === length - 1 ? 0 : index + 1;
-      }
-
-      rootState.group = presetGroups[nextIndex].id;
-    },
-    { useCapture: true },
-  );
+  const navigateGroup = (direction: -1 | 1) => {
+    const index = presetGroups.findIndex((item) => item.id === rootState.group);
+    const length = presetGroups.length;
+    rootState.group =
+      presetGroups[(((index + direction) % length) + length) % length].id;
+  };
 
   useKeyPress(
-    (e) => e.code === "ArrowRight" || e.code === "ArrowLeft",
+    ["left", "right", "tab"],
     (event) => {
       event.preventDefault();
       event.stopPropagation();
 
-      const index = presetGroups.findIndex(
-        (item) => item.id === rootState.group,
-      );
-      const length = presetGroups.length;
-
-      let nextIndex = index;
-
-      if (event.code === "ArrowLeft") {
-        nextIndex = index === 0 ? length - 1 : index - 1;
-      } else {
-        nextIndex = index === length - 1 ? 0 : index + 1;
+      if (event.key === "Tab") {
+        return navigateGroup(event.shiftKey ? -1 : 1);
       }
-
-      rootState.group = presetGroups[nextIndex].id;
+      return navigateGroup(event.key === "ArrowLeft" ? -1 : 1);
     },
     { useCapture: true },
   );
